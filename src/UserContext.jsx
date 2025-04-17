@@ -1,8 +1,10 @@
+
 import React, { createContext, useState } from 'react';
 
-const myContext = createContext();
 
-const UserContext = ({ children }) => {
+const UserContext = createContext();
+
+const UserProvider = ({ children }) => {
   const [name, setName] = useState("hemant");
 
   return (
@@ -12,5 +14,4 @@ const UserContext = ({ children }) => {
   );
 };
 
-export default UserContext;
-export { myContext };
+export { UserProvider, UserContext };
