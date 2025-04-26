@@ -1,14 +1,18 @@
-import React from 'react'
-import { useContext } from 'react';
-import { myContext } from './App';
+import React, { useContext } from 'react';
+import { MyContext } from './UserContext';
+
 const Cybrom = () => {
-    const { name } = useContext(myContext);
-    console.log(name);
+  const { name, setName } = useContext(MyContext);
+
   return (
-      <>
-          <h1>Welcome: {name} </h1>
-      </>
-  )
-}
+    <>
+      <h1>Cybrom</h1>
+      <h2>Hello, {name}</h2>
+      <button onClick={() => setName("Om Prakash")}>
+        Change Name
+      </button>
+    </>
+  );
+};
 
 export default Cybrom;

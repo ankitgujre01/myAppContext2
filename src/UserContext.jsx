@@ -1,17 +1,18 @@
-
 import React, { createContext, useState } from 'react';
 
+// Create context
+const MyContext = createContext();
 
-const UserContext = createContext();
-
-const UserProvider = ({ children }) => {
-  const [name, setName] = useState("hemant");
+// Context Provider component
+const UserContext = ({ children }) => {
+  const [name, setName] = useState("Ankit");
 
   return (
-    <UserContext.Provider value={{ name, setName }}>
+    <MyContext.Provider value={{ name, setName }}>
       {children}
-    </UserContext.Provider>
+    </MyContext.Provider>
   );
 };
 
-export { UserProvider, UserContext };
+export default UserContext;
+export { MyContext };
